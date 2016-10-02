@@ -1,0 +1,51 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.text.html':
+    'HTML5 Skeleton':
+      'prefix': 'html5'
+      'body': '
+<!DOCTYPE html>\n
+<html>\n
+\t<head>\n
+\t\t<meta charset="utf-8">\n
+\t\t<title>Title</title>\n
+\t\t<link rel="icon" href="assetes/images/favicons/favicon.ico" />\n
+\t\t<link rel="icon" type="image/png" href="assetes/images/favicons/favicon.png" />\n
+\t\t<link rel="stylesheet" href="assets/css/main.css">\n
+\t\t<script src="assets/js/main.js"></script>\n
+\t</head>\n
+\t<body>\n\n
+\t\t<header id="header">\n
+\t\t\t<div class="container">\n
+\t\t\t</div>\n
+\t\t</header>\n\n
+\t\t<div id="main">\n
+\t\t\t<div class="container">\n
+\t\t\t</div>\n
+\t\t</div>\n\n
+\t\t<footer id="footer">\n
+\t\t\t<div class="container">\n
+\t\t\t</div>\n
+\t\t</footer>\n\n
+\t</body>\n
+</html>'
