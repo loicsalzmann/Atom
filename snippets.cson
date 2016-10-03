@@ -22,30 +22,60 @@
 
 '.text.html':
     'HTML5 Skeleton':
-      'prefix': 'html5'
-      'body': '
-<!DOCTYPE html>\n
-<html>\n
-\t<head>\n
-\t\t<meta charset="utf-8">\n
-\t\t<title>Title</title>\n
-\t\t<link rel="icon" href="assetes/images/favicons/favicon.ico" />\n
-\t\t<link rel="icon" type="image/png" href="assetes/images/favicons/favicon.png" />\n
-\t\t<link rel="stylesheet" href="assets/css/main.css">\n
-\t\t<script src="assets/js/main.js"></script>\n
-\t</head>\n
-\t<body>\n\n
-\t\t<header id="header">\n
-\t\t\t<div class="container">\n
-\t\t\t</div>\n
-\t\t</header>\n\n
-\t\t<div id="main">\n
-\t\t\t<div class="container">\n
-\t\t\t</div>\n
-\t\t</div>\n\n
-\t\t<footer id="footer">\n
-\t\t\t<div class="container">\n
-\t\t\t</div>\n
-\t\t</footer>\n\n
-\t</body>\n
-</html>'
+        'prefix': 'html5'
+        'body': '
+            <!DOCTYPE html>\n
+            <html>\n
+            \t<head>\n
+            \t\t<meta charset="utf-8">\n
+            \t\t<title>Title</title>\n
+            \t\t<link rel="icon" href="assetes/images/favicons/favicon.ico" />\n
+            \t\t<link rel="icon" type="image/png" href="assetes/images/favicons/favicon.png" />\n
+            \t\t<link rel="stylesheet" href="assets/css/main.css">\n
+            \t\t<script src="assets/js/main.js"></script>\n
+            \t</head>\n
+            \t<body>\n\n
+            \t\t<header id="header">\n
+            \t\t\t<div class="container">\n
+            \t\t\t</div>\n
+            \t\t</header>\n\n
+            \t\t<div id="main">\n
+            \t\t\t<div class="container">\n
+            \t\t\t</div>\n
+            \t\t</div>\n\n
+            \t\t<footer id="footer">\n
+            \t\t\t<div class="container">\n
+            \t\t\t</div>\n
+            \t\t</footer>\n\n
+            \t</body>\n
+            </html>'
+
+'.source.js':
+    'jQuery Skeleton':
+        'prefix': 'jQuery'
+        'body': '
+            $(document).ready(function() {\n\n
+            \talert(\'Document ready !\');\n\n
+            \t/**\n
+            \t* Click event\n
+            \t*/\n
+            \t$(\'element\').click(function() {\n
+            \t\talert(\'Element clicked !\');\n
+            \t});\n\n
+            \t/**\n
+            \t* Hover event\n
+            \t*/\n
+            \t$(\'element\').hover(\n
+            \t\tfunction() {\n
+            \t\t\talert(\'Hover in\');\n
+            \t\t}, function() {\n
+            \t\t\talert(\'Hover out\');\n
+            \t\t}\n
+            \t);\n\n
+            \t/**\n
+            \t* Each loop\n
+            \t*/\n
+            \t$.each(\'element\', function(index, value) {\n
+            \t\talert(index + \': \' + value );\n
+            \t});\n\n
+            });'
