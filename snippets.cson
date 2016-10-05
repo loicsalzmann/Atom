@@ -75,7 +75,7 @@
             \t/**\n
             \t* Each loop\n
             \t*/\n
-            \t$.each(\'element\', function(index, value) {\n
+            \t$(\'element\').each(function(index, value) {\n
             \t\talert(index + \': \' + value );\n
             \t});\n\n
             });'
