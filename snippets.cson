@@ -28,11 +28,12 @@
             <html>\n
             \t<head>\n
             \t\t<meta charset="utf-8">\n
+            \t\t<meta name="viewport" content="width=device-width, initial-scale=1">\n
             \t\t<title>Title</title>\n
-            \t\t<link rel="icon" href="assetes/images/favicons/favicon.ico" />\n
-            \t\t<link rel="icon" type="image/png" href="assetes/images/favicons/favicon.png" />\n
-            \t\t<link rel="stylesheet" href="assets/css/main.css">\n
-            \t\t<script src="assets/js/main.js"></script>\n
+            \t\t<link rel="icon" href="assets/images/favicons/favicon.ico" />\n
+            \t\t<link rel="icon" type="image/png" href="assets/images/favicons/favicon.png" />\n
+            \t\t<link rel="stylesheet" href="assets/styles/main.css">\n
+            \t\t<script src="assets/scripts/main.js"></script>\n
             \t</head>\n
             \t<body>\n\n
             \t\t<header id="header">\n
@@ -55,27 +56,38 @@
         'prefix': 'jQuery'
         'body': '
             $(document).ready(function() {\n\n
-            \talert(\'Document ready !\');\n\n
-            \t/**\n
-            \t* Click event\n
-            \t*/\n
-            \t$(\'element\').click(function() {\n
-            \t\talert(\'Element clicked !\');\n
-            \t});\n\n
-            \t/**\n
-            \t* Hover event\n
-            \t*/\n
-            \t$(\'element\').hover(\n
-            \t\tfunction() {\n
-            \t\t\talert(\'Hover in\');\n
-            \t\t}, function() {\n
-            \t\t\talert(\'Hover out\');\n
-            \t\t}\n
-            \t);\n\n
-            \t/**\n
-            \t* Each loop\n
-            \t*/\n
-            \t$(\'element\').each(function(index, value) {\n
-            \t\talert(index + \': \' + value );\n
-            \t});\n\n
+            \tconsole.log(\'Document ready !\');\n\n
             });'
+
+'.source.php':
+    'PHP print_r':
+        'prefix': 'printVarData'
+        'body': 'echo \'<pre>\'.print_r($var, true).\'</pre>\';'
+    'PHP loop':
+        'prefix': 'loop'
+        'body': '
+            <?php\n
+            \t$args = [\n
+            \t\t\'post_type\' => $post_type,\n
+            \t\t\'post_status\' => \'published\',\n
+            \t\t\'posts_per_page\' => -1\n
+            \t);\n\n
+            \t$query = new WP_Query($args);\n\n
+            \t$count = $query->post_count;\n
+            \t$iRow = 0;\n
+            \t$i = 0;\n
+            ?>\n\n
+            <?php if ($query->have_posts()) : ?>\n
+            \t<?php while ($query->have_posts()) : $query->the_post(); $i++; $iRow++; ?>\n\n
+            \t\t<?php if ($iRow == 1) { ?>\n
+            \t\t\t<div class="row-elements">\n
+            \t\t<?php } ?>\n\n
+            \t\t\t<div class="element">\n
+            \t\t\t\tElement\n
+            \t\t\t</div> <!-- .element -->\n\n
+            \t\t<?php if ($iRow == 3 || $count == $i) { $rowElem = 0; ?>\n
+            \t\t\t</div> <!-- .row-elements -->\n
+            \t\t<?php } ?>\n\n
+            \t<?php endwhile; ?>\n
+            <?php endif; ?>\n
+            <?php wp_reset_postdata(); ?>\n\n'
